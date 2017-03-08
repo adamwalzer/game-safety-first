@@ -156,8 +156,8 @@
             person-with-flat
             cable-person;
 
-        $yes-positions: -419 -811 -1203 -1984 -3941;
-        $no-positions: -3162 1595 -2373 -2767 -3552;
+        $yes-positions: -419  -811 -1203 -1984 -3941;
+        $no-positions: -3162 -1595 -2373 -2767 -3552;
 
         @for $i from 1 through length($yes) {
             &.open-#{nth($yes, $i)} .frame {
