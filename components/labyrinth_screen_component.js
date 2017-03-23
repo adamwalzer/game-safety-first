@@ -3,6 +3,7 @@ import DPad from 'shared/components/d_pad/0.1';
 import IteractiveItem from 'shared/components/interactive_item/0.1';
 import MediaCollection from 'shared/components/media_collection/0.1';
 import RevealPrompt from 'shared/components/reveal_prompt/0.1';
+import classNames from 'classnames';
 
 export default function (props, ref, key, opts = {}) {
     var itemInteract;
@@ -13,14 +14,23 @@ export default function (props, ref, key, opts = {}) {
     var items = [];
 
     itemInteract = function () {
+        var self = this;
         this.complete();
         this.disable();
-        this.updateGameState({
+
+        // this.updateGameState({
+        //     path: 'interact',
+        //     data: this.props.className
+        // });
+
+        // setTimeout(function () {
+        self.updateGameState({
             path: 'reveal',
             data: {
-                open: this.props.className
+                open: self.props.className
             }
         });
+        // }, 1000);
     };
 
     onLabyrinthStart = function () {
@@ -87,7 +97,9 @@ export default function (props, ref, key, opts = {}) {
     for (let i = 0; i < opts.itemsCount; i++) {
         items.push(
             <IteractiveItem
-                className={'item-' + (i + 1)}
+                className={classNames(
+                    `item-${i + 1}`
+                )}
                 checkComplete={false}
                 onInteract={itemInteract}
             />
