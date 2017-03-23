@@ -15,20 +15,20 @@
         width: 100%;
 
         .player {
-            width: 10px;
-            height: 10px;
+            width: 35px;
+            height: 35px;
 
             &::before {
                 display: block;
                 position: absolute;
-                top: -450%;
-                left: -450%;
+                top: -100%;
+                left: -100%;
                 background-image: url('#{$sprite}sprites.charac.png');
                 background-repeat: no-repeat;
                 background-position: 0% 0%;
                 background-size: 100% auto;
-                width: 1000%;
-                height: 1000%;
+                width: 300%;
+                height: 300%;
                 content: '';
             }
         }
@@ -136,12 +136,12 @@
 #labyrinth-outdoors {
     .labyrinth {
         .interactive-item {
-            $item-lefts:                660  262   86   86  458  638  642;
-            $item-tops:                 174  273  322  428  455  299  457;
-            $background-lefts:          -19 -134 -234 -376 -504 -619 -741;
-            $background-tops:            -6   -6   -6   -6   -6   -6   -6;
-            $complete-background-lefts: -19 -134 -234 -376 -504 -619 -741;
-            $complete-background-tops: -146 -146 -146 -146 -146 -146 -146;
+            $item-lefts:                662  262   86   86  400  638;
+            $item-tops:                 119  313  322  458  455  414;
+            $background-lefts:          -19 -134 -234 -376 -504 -619;
+            $background-tops:            -6   -6   -6   -6   -6   -6;
+            $complete-background-lefts: -19 -134 -234 -376 -504 -619;
+            $complete-background-tops: -146 -146 -146 -146 -146 -146;
 
             &::before {
                 position: absolute;
@@ -163,7 +163,7 @@
                 width: 1400%;
             }
 
-            @for $i from 1 through 7 {
+            @for $i from 1 through 6 {
                 &.item-#{$i} {
                     top: #{nth($item-tops, $i)}px;
                     left: #{nth($item-lefts, $i)}px;
@@ -173,6 +173,7 @@
                     }
 
                     &.COMPLETE::before {
+                        opacity: .75;
                         background-position: #{nth($complete-background-lefts, $i)}px #{nth($complete-background-tops, $i)}px;
                     }
                 }
