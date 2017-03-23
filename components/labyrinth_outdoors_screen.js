@@ -4,16 +4,16 @@ export default function (props, ref, key) {
     return LabyrinthScreenComponent(props, ref, key, {
         id: 'labyrinth-outdoors',
         levelNumber: 1,
-        itemsCount: 7,
+        itemsCount: 6,
         disableChance: .75,
         disableInterval: 4000,
         openOnStart: 'instructions',
         img: `${MEDIA.IMAGE}map.01.fullimg.jpg`,
         map: `${MEDIA.IMAGE}map.01.jpg`,
         tips: true,
-        goal: 9,
+        goal: 8,
         startX: 140,
-        startY: 120,
+        startY: 106,
         vos: [
             <skoash.MediaSequence
                 ref="instructions"
@@ -133,21 +133,6 @@ export default function (props, ref, key) {
                     ref="vo-16"
                     type="voiceOver"
                     src={`${MEDIA.VO}StrangerCar.mp3`}
-                />
-            </skoash.MediaSequence>,
-            <skoash.MediaSequence
-                ref="item-7"
-                silentOnStart={true}
-            >
-                <skoash.Audio
-                    ref="vo-17"
-                    type="sfx"
-                    src={`${MEDIA.EFFECT}MapGame.mp3`}
-                />
-                <skoash.Audio
-                    ref="vo-18"
-                    type="voiceOver"
-                    src={`${MEDIA.VO}StrangerGift.mp3`}
                 />
             </skoash.MediaSequence>,
             <skoash.MediaSequence
@@ -347,32 +332,6 @@ export default function (props, ref, key) {
             <skoash.Component
                 ref="item-6"
                 className="labyrinth-frame item-6 tip"
-            >
-                <skoash.Image
-                    className="bush-left"
-                    src={`${MEDIA.IMAGE}bush.3.png`}
-                />
-                <skoash.Image
-                    className="bush-right"
-                    src={`${MEDIA.IMAGE}bush.2.png`}
-                />
-                <skoash.Image
-                    className="wolf"
-                    src={`${MEDIA.IMAGE}wolf.fullbody.png`}
-                />
-                <skoash.Image
-                    className="sign"
-                    src={`${MEDIA.IMAGE}road.sign.png`}
-                />
-                <skoash.Image
-                    className="grass"
-                    src={`${MEDIA.IMAGE}grass.png`}
-                />
-                <skoash.Component className="content" />
-            </skoash.Component>,
-            <skoash.Component
-                ref="item-7"
-                className="labyrinth-frame item-7 tip"
             >
                 <skoash.Image
                     className="bush-left"
